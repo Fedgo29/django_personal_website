@@ -1,0 +1,13 @@
+<div class="navbar">
+    <ul>
+        <li><a href="{% url 'home' %}#contacto">Contacto</a></li>
+        {% if '#projects' in request.path %}
+            <li><a href="#projects">{{request.path}}</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+        {% else %}
+            <li><a href="{% url 'posts'%}">Proyectos</a></li>
+        {% endif %}
+        <li><a href="{% url 'home' %}">Inicio</a></li>
+        <!--<li><a href="{% url 'profile' %}">Perfil</a></li>-->
+    </ul>
+</div>
