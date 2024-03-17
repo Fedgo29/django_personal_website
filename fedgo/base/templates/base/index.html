@@ -14,10 +14,16 @@
 		<div class="main-container">
 			{% include 'base/navbar.html' %}
 			<div class="grid-align-logo">
-				<div class="greeting-wrapper">
-					<h1>Edgar</h1>
-					<h4>Gómez</h4>
-					<h1>Fernández</h1>
+				<div class="grid-layout-jobPres">
+					<div class="greeting-wrapper">
+						<h1>Edgar</h1>
+						<h4>Gómez</h4>
+						<h1>Fernández</h1>
+					</div>
+					<div class="div-row"></div>
+					<div class="position">
+						<h2>Desarrollador backend</h2>
+					</div>
 				</div>			
 				<div class="pictures">
 					<img src="{% static 'images/fedgo.jpg'%}">
@@ -29,7 +35,7 @@
 		<div class="main-container">
 			<div class="about-wrapper">
 				<div class="about-me">
-					<!--<h4></h4>-->
+					<hr>
 					<p>Especialista en tecnologías de la información y la comunicación, desarrollador Junior en programación web a nivel de backend y para móviles.</p>
 					<hr>
 					<h4>Experiencia con las siguientes tecnologías: </h4>
@@ -37,34 +43,34 @@
 						<ol>
 							<ul>
 								<li>
-									<img src="https://www.python.org/static/img/python-logo@2x.png" alt="">
 									<ul>
-										<li>Librerías de IA para VC: tensorflow, opencv, YoloV8 y V9, etc.</li>
-										<li>Librerías de IA para LLM: GPT, Llama2.</li>
+										<li><img src="https://www.python.org/static/img/python-logo@2x.png" alt=""></li>
+										<li>IA para VC: tensorflow, opencv, YoloV8 y V9, etc.</li>
+										<li>IA para LLM: GPT, Llama2.</li>
 										<li>Frameworks: Django, Flask, etc.</li>
 									</ul>
 								</li>
 								<li>
-									<img src="https://cdn.iconscout.com/icon/free/png-256/free-java-60-1174953.png" alt="">
 									<ul>
+										<li><img src="https://cdn.iconscout.com/icon/free/png-256/free-java-60-1174953.png" alt=""></li>
 										<li>Framworks: Springboot, etc.</li>
 									</ul>
 								</li>
 							</ul>
 						</ol>
-						</ol>
+						<ol>
 							<ul>
 								<li>
-									<img src="https://cdn-icons-png.flaticon.com/512/9414/9414296.png" alt="">
 									<ul>
+										<li><img src="https://cdn-icons-png.flaticon.com/512/9414/9414296.png" alt=""></li>
 										<li>HTML5</li>
 										<li>CCS3</li>
 										<li>Javascript</li>
 									</ul>
 								</li>
 								<li>
-									<img src="https://static-00.iconduck.com/assets.00/sql-database-generic-icon-1521x2048-d0vdpxpg.png" alt="">
 									<ul>
+										<li><img src="https://static-00.iconduck.com/assets.00/sql-database-generic-icon-1521x2048-d0vdpxpg.png" alt=""></li>
 										<li>MySQL</li>
 										<li>SQLServer</li>
 										<li>Sqlite3</li>
@@ -76,7 +82,7 @@
 				</div>
 			</div>
 			<div class="cv_panel">
-				<p>Ver más en mi hoja de vida: <br><a target="_blank" href="{% static '/documents/CV_Edgar_Gómez.pdf' %}">Descargar CV en español</a>|<a target="_blank" href="{% static '/documents/CV_Edgar_Gómez_eng.pdf' %}">Descargar CV en inglés</a></p>
+				<p>Ver más en mi hoja de vida <br><a target="_blank" href="{% static '/documents/CV_Edgar_Gómez.pdf' %}">Descargar CV en español</a>|<a target="_blank" href="{% static '/documents/CV_Edgar_Gómez_eng.pdf' %}">Descargar CV en inglés</a></p>
 			</div>
 		</div>
 	</section>
@@ -110,7 +116,8 @@
 				</div>
 				<div>
 					<h3 style="text-align: center; ">Contáctame</h3>
-					<form id="contact-form">
+					<form id="contact-form" method="POST" action="{% url 'send_email' %}">
+						{% csrf_token %}
 						<a name="contact"></a>
 						<label>Nombre</label>
 						<input class="input-field" type="text" name="name">

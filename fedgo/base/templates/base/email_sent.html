@@ -1,0 +1,48 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<style type="text/css">
+    html, body {
+        height: 100%;
+        background: url('images/fedgo.jpg');
+    }
+    #page-wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #eaeaea;
+
+        margin: 100px;
+        padding: 100px;
+    }
+    #success-box {
+        max-width: 800px;
+        height: auto;
+        background-color: #fff;
+        border: 1px solid #888;
+        border-radius: 5px;
+        padding: 15px;   
+    }
+    #success-box p {
+        font-size: 18px;
+    }
+    .btn {
+        background: gray;
+        padding: 10px;
+        margin: 10px;
+        color: white;
+        align-items: center;
+        border-radius: 10px;
+    }
+</style>
+<div id="page-wrapper">
+    <div id="success-box" class="content-block">
+        <h1>Gracias por preferirme</h1>
+        <p>Tu mensaje fue enviado exitosamente. Me contactaré contigo en cuanto reciba tu mensaje.</p>
+        <a id="back-btn" class="btn btn-success" href="{% url 'home' %}"> Regresar a inicio</a>
+    </div>
+</div>
+{% endblock content %}

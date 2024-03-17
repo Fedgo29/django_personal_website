@@ -8,6 +8,7 @@
 	--previewBg:rgb(251, 249, 243, 0.8);
 	--previewShadow:#f0ead6;
 	--buttonColor:black;
+	--skillsColors: linear-gradient(109.6deg, rgb(14, 11, 56) 11.2%, rgb(239, 37, 37) 91.1%);
 }
 
 
@@ -99,15 +100,31 @@ h6 { font-size: 16px;}
 	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
 
+
+.grid-layout-jobPres{
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto;
+	text-align: center;
+	height: auto;
+	padding: 0;
+	margin: 0;
+}
+
+.div-row {
+	background-color: white;
+	margin: 5px;
+	padding: 5px;
+}
+
 .greeting-wrapper{
 	display: inline-flex;
 	position: relative;
-	text-align: center;
-	align-content: center;
-	vertical-align: center;
-	min-height: 10em;
-	padding: 50px;
-	margin: 0px;
+	/*min-height: 10em;*/
+	padding-left: 50px;
+	padding-top: 50px;
+	padding-bottom: 0;
+	margin: 0;
 	font-family: 'Courier New', Courier, monospace;
 }
 
@@ -118,6 +135,17 @@ h6 { font-size: 16px;}
 
 .greeting-wrapper h4 {
 	color: whitesmoke;
+}
+
+.position {
+	margin: 0;
+	padding: 0;
+}
+
+.position h2 {
+	color: white;
+	margin: 0;
+	padding: 0;
 }
 
 .pictures {
@@ -132,6 +160,11 @@ h6 { font-size: 16px;}
 	object-fit: cover;
 	object-position: center;
 	border-radius: 1000% 0px 0px 0%;
+}
+
+.cv_panel{
+	align-content: center;
+	text-align: center;
 }
 
 .cv_panel p{
@@ -171,37 +204,6 @@ h6 { font-size: 16px;}
 	position: relative;
 }
 
-.corner{
-	width:7px;
-	height: 7px;
-	border-radius: 50%;
-	border:1.5px solid #17a2b8;
-	background-color: #fff;
-	position: absolute;
-}
-
-#corner-tl{
-	top:-5px;
-	left: -5px
-}
-
-#corner-tr{
-	top:-5px;
-	right: -5px
-}
-
-
-#corner-br{
-	bottom:-5px;
-	right: -5px
-}
-
-
-#corner-bl{
-	bottom:-5px;
-	left: -5px
-}
-
 .about-wrapper{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -210,16 +212,32 @@ h6 { font-size: 16px;}
 	gap:100px;
 }
 
+.about-me {
+	text-align: center;
+}
 
 #skills{
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
 	justify-content: space-evenly;
-	background-color: var(--previewShadow);
+	background: var(--skillsColors);
+	align-items: center;
 }
 
 #skills img{
 	height: 100px;
 	width: auto;
+}
+
+#skills ol ul li ul{
+	margin: 10px;
+	padding: 10px;
+}
+
+#skills ol ul li ul li{
+	color: white;
+	background: var(--skillsColors);
 }
 
 .social-links{
@@ -333,6 +351,25 @@ h6 { font-size: 16px;}
 }
 
 
+/*Contact-container*/
+.contact-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	align-items: center;
+}
+.contact-container .comic-img {
+	height: 100%;
+	width: 100%;
+	align-items: center;
+}
+
+.comic-img img{
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+}
+
 @media screen and (max-width: 1200px){
 	.main-container{
 		width: 100%;
@@ -358,13 +395,20 @@ h6 { font-size: 16px;}
 	.contact-container{
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr;
+		grid-template-rows: 1fr 1fr;
 	}
 	.comic-img {
 		height: auto;
-		width: 500px;
+		width: 100px;
 		align-items: center;
-	}	
+	}		
+	.social-links-wIcons{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		align-content: center;
+		text-align: center;
+	}
 }
 
 @media screen and (max-width: 400px){
@@ -386,12 +430,19 @@ h6 { font-size: 16px;}
 	.contact-container{
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr;
+		grid-template-rows: 1fr 1fr;
 	}
 	.comic-img {
 		height: auto;
-		width: 500px;
+		width: 50px;
 		align-items: center;
+	}
+	.social-links-wIcons{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		align-content: center;
+		text-align: center;
 	}	
 }
 
@@ -419,23 +470,3 @@ h6 { font-size: 16px;}
 		background-color: #111;
 	}
 }
-
-/*Contact-container*/
-.contact-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr;
-	align-items: center;
-}
-.comic-img {
-	height: auto;
-	width: 500px;
-	align-items: center;
-}
-
-.comic-img img{
-	width: 100%;
-	height: 100%;
-	border-radius: 100%;
-}
-
