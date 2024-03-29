@@ -12,10 +12,12 @@
 	<link id="theme-style" rel="stylesheet" type="text/css" href="">
 </head>
 <body>
-    <div class="main-container">
-        {% include 'base/navbar.html' %}
-        {% block content %}
-        {% endblock content %}
-    </div>
+    {% include 'base/navbar.html' %}
+    <section class="s2">
+        <div class="main-container">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </section>
 </body>
 </html>

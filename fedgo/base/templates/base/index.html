@@ -39,51 +39,53 @@
 					<p>Especialista en tecnologías de la información y la comunicación, desarrollador Junior en programación web a nivel de backend y para móviles.</p>
 					<hr>
 					<h4>Experiencia con las siguientes tecnologías: </h4>
-					<div id="skills">
-						<ol>
+					<div class="skills-container">
+						<div class="skill-item">
+							<div class="skill-item-header">
+								<img src="https://www.python.org/static/img/python-logo@2x.png" alt="">
+							</div>
 							<ul>
-								<li>
-									<ul>
-										<li><img src="https://www.python.org/static/img/python-logo@2x.png" alt=""></li>
-										<li>IA para VC: tensorflow, opencv, YoloV8 y V9, etc.</li>
-										<li>IA para LLM: GPT, Llama2.</li>
-										<li>Frameworks: Django, Flask, etc.</li>
-									</ul>
-								</li>
-								<li>
-									<ul>
-										<li><img src="https://cdn.iconscout.com/icon/free/png-256/free-java-60-1174953.png" alt=""></li>
-										<li>Framworks: Springboot, etc.</li>
-									</ul>
-								</li>
+								<li>IA para VC: tensorflow, opencv, YoloV8 y V9, etc.</li>
+								<li>IA para LLM: GPT, Llama2.</li>
+								<li>Frameworks: Django, Flask, etc.</li>
 							</ul>
-						</ol>
-						<ol>
+						</div>
+						<div class="skill-item">
+							<div class="skill-item-header">
+								<img src="https://cdn.iconscout.com/icon/free/png-256/free-java-60-1174953.png" alt="">
+							</div>
 							<ul>
-								<li>
-									<ul>
-										<li><img src="https://cdn-icons-png.flaticon.com/512/9414/9414296.png" alt=""></li>
-										<li>HTML5</li>
-										<li>CCS3</li>
-										<li>Javascript</li>
-									</ul>
-								</li>
-								<li>
-									<ul>
-										<li><img src="https://static-00.iconduck.com/assets.00/sql-database-generic-icon-1521x2048-d0vdpxpg.png" alt=""></li>
-										<li>MySQL</li>
-										<li>SQLServer</li>
-										<li>Sqlite3</li>
-									</ul>
-								</li>
+								<li>Framworks: Springboot, etc.</li>
 							</ul>
-						</ol>
+						</div>
+						<div class="skill-item">
+							<div class="skill-item-header">
+								<img src="https://cdn-icons-png.flaticon.com/512/9414/9414296.png" alt="">
+							</div>
+							<ul>
+								<li>HTML5</li>
+								<li>CCS3</li>
+								<li>Javascript</li>
+							</ul>
+						</div>
+						<div class="skill-item">
+							<div class="skill-item-header">
+								<img src="https://static-00.iconduck.com/assets.00/sql-database-generic-icon-1521x2048-d0vdpxpg.png" alt="">
+							</div>
+							<ul>
+								<li>MySQL</li>
+								<li>SQLServer</li>
+								<li>Sqlite3</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
+			<hr>
 			<div class="cv_panel">
 				<p>Ver más en mi hoja de vida <br><a target="_blank" href="{% static '/documents/CV_Edgar_Gómez.pdf' %}">Descargar CV en español</a>|<a target="_blank" href="{% static '/documents/CV_Edgar_Gómez_eng.pdf' %}">Descargar CV en inglés</a></p>
 			</div>
+			<hr>
 		</div>
 	</section>
 	<section class="s3" id="projects">
@@ -114,7 +116,7 @@
 				<div class="comic-img">
 					<img src="{% static 'images/fedgo2.jpeg'%}" alt="">					
 				</div>
-				<div>
+				<div class="contact-form">
 					<h3 style="text-align: center; ">Contáctame</h3>
 					<form id="contact-form" method="POST" action="{% url 'send_email' %}">
 						{% csrf_token %}
